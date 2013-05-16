@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sample form</title>
+	<link href="../auto-form-confirmer.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../auto-form-confirmer.js"></script>
+</head>
+<body>
+	<form action="thanks.php" method="post" class="auto-form-confirmer">
+	<div class="on-neutral"><h1>step1</h1></div>
+	<div class="on-confirm"><h1>step2</h1></div>
+	<table>
+		<tr>
+			<th>text</th>
+			<td><input type="text" name="text" value="text" /></td>
+		</tr>
+		<tr>
+			<th class="required-label">email</th>
+			<td><input type="text" name="email" class="required email" value="invalid@email" /></td>
+		</tr>
+		<tr>
+			<th class="required-label">password</th>
+			<td><input type="password" name="password" class="required" value="sample-password"></td>
+		</tr>
+		<tr>
+			<th class="required-label">check</th>
+			<td>
+				<label><input type="checkbox" name="check[]" class="required" value="1" checked>check0</label>
+				<label><input type="checkbox" name="check[]" value="2">check1</label>
+				<label><input type="checkbox" name="check[]" value="3">check2</label>
+			</td>
+		</tr>
+		<tr>
+			<th class="required-label">radio</th>
+			<td>
+				<label><input type="radio" name="radio" class="required" value="1" checked>radio0</label>
+				<label><input type="radio" name="radio" value="2">radio1</label>
+				<label><input type="radio" name="radio" value="3">radio2</label>
+			</td>
+		</tr>
+		<tr>
+			<th class="required-label">list</th>
+			<td>
+				<select name="list" multiple class="required">
+					<option value="">please select</option>
+					<option value="0">list0</option>
+					<option value="1">list1</option>
+					<option value="2">list2</option>
+					<option value="3">list3</option>
+					<option value="4">list4</option>
+					<option value="5">list5</option>
+					<option value="6">list6</option>
+					<option value="7">list7</option>
+					<option value="8">list8</option>
+					<option value="9">list9</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th class="required-label">select</th>
+			<td>
+				<select name="select" class="required">
+					<option value="">please select</option>
+					<option value="0">select0</option>
+					<option value="1">select1</option>
+					<option value="2">select2</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th class="required-label">textarea</th>
+			<td><p class="fadeout">feel free to inquire.</p><textarea name="content" rows="5" class="required">textarea
+textarea</textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button type="submit" class="button-confirm">confirm</button
+				><button type="button" class="button-back">back</button
+				><button type="submit" class="button-submit">submit</button>
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

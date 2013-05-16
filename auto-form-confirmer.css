@@ -1,0 +1,2 @@
+.auto-form-confirmer .errored{border-color:#d00;}.auto-form-confirmer .errored[type='checkbox'],.auto-form-confirmer .errored[type='radio']{outline:1px solid #d00;}
+.auto-form-confirmer div.errortip{position:absolute;border:1px solid #fee;color:#d00;font-weight:bold;background-color:#fee;padding:5px;-webkit-box-shadow:#dd9999 1px 1px 3px,#dd9999 -1px -1px 3px;-moz-box-shadow:#dd9999 1px 1px 3px,#dd9999 -1px -1px 3px;box-shadow:#dd9999 1px 1px 3px,#dd9999 -1px -1px 3px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}

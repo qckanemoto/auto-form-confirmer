@@ -1,0 +1,11 @@
+*{font-size:10pt;box-sizing:border-box;}
+h1{font-size:150%;}
+form table{border-collapse:collapse;}form table td,form table th{border:1px solid #ccc;padding:0.5em 1em;}
+form table th{background-color:#eee;width:100px;text-align:left;padding-right:50px;}form table th span{color:#d00;}
+form table td{background-color:#fff;width:300px;}form table td input[type='text'],form table td input[type='password'],form table td select,form table td textarea{width:100%;}
+form table td label,form table td label *{cursor:pointer;}
+form table td[colspan='2']{border:none;text-align:center;}
+form table td p{margin:0.5em 0;}
+form table button{padding:1em;}
+input,select,textarea{border:1px solid #ccc;padding:5px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+div#thanks{border:1px solid #ccc;padding:3px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;width:30%;padding:20px;}div#thanks h1{font-size:130%;font-weight:bold;color:#666;margin-bottom:2em;}
