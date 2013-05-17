@@ -110,7 +110,7 @@ $(function() {
 		// go to confirm view from neutral view.
 		if (!$form.hasClass("confirm")) {
 			// hide all input items and print values instead.
-			$form.find("input:not(:submit), select, textarea, label, .fadeout, .on-neutral").fadeOut(fadeSpeed);
+			$form.find("input:not(:submit), select, textarea, label, .fadeout, .on-neutral").hide();
 			$form.find(".on-neutral").hide();
 			$form.find(".on-confirm").fadeIn(fadeSpeed);
 			$form.find(".button-confirm").hide();
