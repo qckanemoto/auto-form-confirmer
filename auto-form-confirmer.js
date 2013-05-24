@@ -46,13 +46,16 @@ $(function() {
 	}
 
 	var $form = $(".auto-form-confirmer");
+	var confirms = ($form.find(".button-confirm").length !== 0);
 
 	// hide items for only confirm view.
-	$form.find(".on-neutral").show();
-	$form.find(".on-confirm").hide();
-	$form.find(".button-confirm").show();
-	$form.find(".button-back").hide();
-	$form.find(".button-submit").hide();
+	if (confirms) {
+		$form.find(".on-neutral").show();
+		$form.find(".on-confirm").hide();
+		$form.find(".button-confirm").show();
+		$form.find(".button-back").hide();
+		$form.find(".button-submit").hide();
+	}
 
 	// add required mark.
 	$form.find(".required-label").each(function() {
@@ -70,11 +73,17 @@ $(function() {
 
 	// on neutral view, remap submit event to button click event.
 	$form.on("submit", function() {
-		if (!$(this).hasClass("confirm")) {
-			$form.find(".button-confirm").click();
-			return false;
+		if (!confirms) {
+			if (!validate()) {
+				return false;
+			}
 		} else {
-			return true;
+			if (!$(this).hasClass("confirm")) {
+				$form.find(".button-confirm").click();
+				return false;
+			} else {
+				return true;
+			}
 		}
 	});
 
@@ -95,13 +104,15 @@ $(function() {
 	});
 
 	// on browser back or forward button.
-	onpopstate = function(e) {
-		if (e.state === "confirm") {
-			$form.removeClass("confirm");
-		} else {
-		 	$form.addClass("confirm");
+	if (confirms) {
+		onpopstate = function(e) {
+			if (e.state === "confirm") {
+				$form.removeClass("confirm");
+			} else {
+			 	$form.addClass("confirm");
+			}
+			switchView();
 		}
-		switchView();
 	}
 
 	// view switcher.
