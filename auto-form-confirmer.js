@@ -94,10 +94,12 @@ $(function() {
 			switchView();
 
 			// add history via api.
-			if ($form.hasClass("confirm")) {
-				history.pushState("confirm", null, (location.href + "").replace(/#/g, "") + "#");
-			} else {
-				history.pushState(null, null, (location.href + "").replace(/#/g, ""));
+			if (!!history.pushState) {
+				if ($form.hasClass("confirm")) {
+					history.pushState("confirm", null, (location.href + "").replace(/#/g, "") + "#");
+				} else {
+					history.pushState(null, null, (location.href + "").replace(/#/g, ""));
+				}
 			}
 		}
 		return false;
