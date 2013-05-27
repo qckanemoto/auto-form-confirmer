@@ -310,6 +310,9 @@ $(function() {
 			}
 		});
 
+		// focus first of errored items.
+		$form.find(".errored:first").focus();
+
 		// fade out error messages several seconds after.
 		$form.find(".errortip").delay(2000).fadeOut(500);
 
