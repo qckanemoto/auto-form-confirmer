@@ -243,6 +243,12 @@ $(function() {
 
 		// required.
 		$form.find(".required").each(function() {
+
+			// continue if the element is hidden.
+			if (!$(this).is(":visible")) {
+				return true;
+			}
+
 			var type = $(this).get(0).tagName.toLowerCase();
 			if (type === "input") {
 				type = $(this).attr("type").toLowerCase();
