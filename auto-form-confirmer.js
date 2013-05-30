@@ -244,8 +244,8 @@ $(function() {
 		// required.
 		$form.find(".required").each(function() {
 
-			// continue if the element is hidden.
-			if (!$(this).is(":visible")) {
+			// continue if the element is hidden or disabled.
+			if (!$(this).is(":visible") || $(this).is(":disabled")) {
 				return true;
 			}
 
