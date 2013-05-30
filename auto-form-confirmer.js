@@ -6,6 +6,8 @@
 
 $(function() {
 
+	var isIE = /*@cc_on!@*/false;	// true when on IE.
+
 	//---------------------------------------------------------------------------------------------
 	// optional settings. >>>
 	//---------------------------------------------------------------------------------------------
@@ -152,6 +154,12 @@ $(function() {
 			var processed = "";	// list of "name" of processed checkboxes and radios.
 
 			$form.find("input:not(:submit), select, textarea").each(function() {
+
+				// if placeholder is used on IE (with some plugins which place placeholder on value), ignore it.
+				if (isIE && $(this).val() === $(this).attr("placeholder")) {
+					$(this).val("");
+				}
+
 				var type = $(this).get(0).tagName.toLowerCase();
 				if (type === "input") {
 					type = $(this).attr("type").toLowerCase();
@@ -243,6 +251,11 @@ $(function() {
 
 		// required.
 		$form.find(".required").each(function() {
+
+			// if placeholder is used on IE (with some plugins which place placeholder on value), ignore it.
+			if (isIE && $(this).val() === $(this).attr("placeholder")) {
+				$(this).val("");
+			}
 
 			// continue if the element is hidden or disabled.
 			if (!$(this).is(":visible") || $(this).is(":disabled")) {
