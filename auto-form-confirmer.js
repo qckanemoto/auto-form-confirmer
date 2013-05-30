@@ -18,7 +18,7 @@ $(function() {
 		top:	null,
 		bottom:	null,
 		left:	null,
-		right:	"10px"
+		right:	0
 	};
 
 	// validation error messages.
